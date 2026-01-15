@@ -1,6 +1,6 @@
 #include "Structures.h"
 
-//Funcoes
+//Funcoes Gerais
 void clear(){
     #ifdef _WIN32
         system("cls");    
@@ -8,3 +8,5 @@ void clear(){
         system("clear");
     #endif
 }
+
+//Funcoes Estruturas

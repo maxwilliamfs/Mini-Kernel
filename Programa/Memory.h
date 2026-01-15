@@ -4,5 +4,9 @@
 //PreProcessamento
 #define TRAM 64
 
+//Prototipos
+void printmem(){
+
+}
 
 #endif
