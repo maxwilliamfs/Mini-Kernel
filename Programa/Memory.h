@@ -5,8 +5,6 @@
 #define TRAM 64
 
 //Prototipos
-void printmem(){
-
-}
+void printmem();
 
 #endif
