@@ -4,6 +4,7 @@
 
 //Variaveis globais
 int memory[TRAM] = {0};
+NoProcesso *Processos = NULL;
 
 //Funcoes
 void printmem(){
