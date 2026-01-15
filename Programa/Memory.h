@@ -2,7 +2,7 @@
 #define MEMORY_H
 
 //PreProcessamento
-#define TAM_RAM 64;
+#define TRAM 64
 
 
 #endif
