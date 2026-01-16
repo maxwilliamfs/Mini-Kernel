@@ -31,5 +31,7 @@ typedef enum{
 
 //Prototipos
 void clear();
+NoProcesso* criarNoProcesso(char nome[64], int id);
+NoComando* criarNoArquivo(char comando[100]);
 
 #endif

@@ -23,7 +23,8 @@ void Menu(){
         printf("[KERNEL] Digite um comando (load, execute, mem, ps, kill, help).\n\n");
         scanf("%s", op);
         if(strcmp(op,"load") == 0){
-
+            scanf("%s", filenome);
+            load(filenome);
         } else if (strcmp(op,"execute") == 0){
 
         } else if (strcmp(op,"mem") == 0){

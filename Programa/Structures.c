@@ -18,19 +18,15 @@ NoComando* criarNoArquivo(char comando[100]){
 }
 
 //Funcoes Processos
-NoProcesso* criarNoProcess(int id, char nome[64]){
+NoProcesso* criarNoProcesso(char nome[64], int id){
     NoProcesso *novo = malloc(sizeof(NoProcesso));
     novo->prox = NULL;
-    novo->id = id;
     novo->pc = 0;
     novo->estado = PRONTO;
     novo->inicial = NULL;
     novo->atual = NULL;
     strcpy(novo->nome,nome);
     return novo;
-}
-void adicionarProcesso(int id, char nome[64]){
-    NoProcesso *novo = criarNoProcesso(id,nome);
 }
 
 

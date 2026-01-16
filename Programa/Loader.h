@@ -1,8 +1,7 @@
-#ifdef LOADER_H
+#ifndef LOADER_H
 #define LOADER_H
 
-NoProcesso* load(char arquivo[64]){
-    
-}
+//Prototipos
+NoProcesso* load(char arquivo[64]);
 
 #endif
