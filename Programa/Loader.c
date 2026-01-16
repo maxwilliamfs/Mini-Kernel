@@ -19,13 +19,7 @@ NoProcesso* load(char arquivo[64]){
     while (!EOF) {
         char texto[150];
         fgets(texto,150,file);
-        if(strcmp(texto,"malloc") == 0 || strcmp(texto,"print" == 0)){
-            
-        } else if(strcmp(texto,"wait") == 0){
-            
-        } else if(strcmp(texto,"exit") == 0){
-            
-        }
+        char *comand[20] = strtok(texto," ");
     }
     
     
