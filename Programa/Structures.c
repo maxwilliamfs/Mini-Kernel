@@ -10,9 +10,11 @@ void clear(){
 }
 
 //Funcoes Comando
-NoComando* criarNoArquivo(char comando[100]){
+NoComando* criarNoComando(char comando[20], char argutexto[100], int arguint){
     NoComando *novo = malloc(sizeof(NoComando));
     novo->prox = NULL;
+    novo->argumentonumerico = arguint;
+    strcpy(novo->argumentotexto,argutexto);
     strcpy(novo->comando,comando);
     return novo;
 }

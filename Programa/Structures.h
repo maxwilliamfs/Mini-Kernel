@@ -11,7 +11,8 @@
 //Structs
 typedef struct NoComando
 {
-    char comando[100];
+    char comando[20], argumentotexto[100];
+    int argumentonumerico;
     struct NoArquivo *prox;
 } NoComando;
 typedef struct NoProcesso
