@@ -1,9 +1,0 @@
-all:
-	gcc FileSystem.c Loader.c Memory.c Process.c Structures.c MiniKerne.c -o MiniKernel
-
-run:
-	./MiniKernel
-
-clean:
-	rm MiniKernel
-
