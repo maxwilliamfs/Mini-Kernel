@@ -4,6 +4,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include "Structures.h"
+#include "Loader.h"
+#include "Memory.h"
 
 //Prototipos
 void menuPrincipal();
@@ -23,11 +25,12 @@ void menuPrincipal(){
     printf("[KERNEL] Informe um Comando...\n");
     scanf("%s", comando);
     if(strcmp(comando,"load") == 0){
-        
+        scanf("%s", argumento);
+
     } else if(strcmp(comando,"kill") == 0){
 
     } else if(strcmp(comando,"mem") == 0){
-
+        printMemory();
     } else if(strcmp(comando,"ps") == 0){
 
     } else if(strcmp(comando,"help") == 0){
