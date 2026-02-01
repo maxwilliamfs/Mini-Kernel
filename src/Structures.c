@@ -4,6 +4,7 @@
 #include "Process.h"
 
 //Funcoes
+    //ProcessBlock
 ProcessBlock* criarProcessBlock(int id, char nome[64]){
     ProcessBlock *novo = malloc(sizeof(ProcessBlock));
     novo->PC = 0;
@@ -12,11 +13,11 @@ ProcessBlock* criarProcessBlock(int id, char nome[64]){
     novo->inicio = NULL;
     novo->atual = NULL;
     strcpy(novo->nome,nome);
-    novo->inicio = PRONTO;
+    novo->estado = PRONTO;
     novo->prox = NULL;
     return novo;
 }
-void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo, int id, char nome[64]){
+void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo){
     if((*inicio) == NULL){
         (*inicio) = novo;
     } else {
@@ -31,4 +32,28 @@ void ExcluirProcessBlock(ProcessBlock **inicio){
     ProcessBlock *excluir = (*inicio);
     (*inicio) = (*inicio)->prox;
     free(excluir);
+}
+    //Instruction
+Instruction* criarInstuction(char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero){
+    Instruction *novo = malloc(sizeof(Instruction));
+    strcpy(novo->comando,comando);
+    novo->tipoargumento = tipo;
+    if(tipo == TEXTUAL){
+        strcpy(novo->argumentotextual,argumentoTexto);
+    } else if(tipo == NUMERICO){
+        novo->argumentonumerico = argumentoNumero;
+    }
+    novo->prox = NULL;
+}
+void adicionarInstruction(Instruction **inicio, char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero){
+    Instruction *novo = criarInstuction(comando,tipo,argumentoTexto,argumentoNumero);
+    if(*inicio == NULL){
+        *inicio = novo;
+    } else {
+        Instruction *atual = *inicio;
+        while (atual->prox != NULL) {
+            atual = atual->prox;
+        }
+        atual->prox = novo;
+    }
 }

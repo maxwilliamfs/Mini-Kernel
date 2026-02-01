@@ -5,6 +5,6 @@
 #include "Structures.h"
 
 //Prototipos
-void novoProcesso(ProcessBlock **inicio,char nomeArquivo[64]);
+void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]);
 
 #endif

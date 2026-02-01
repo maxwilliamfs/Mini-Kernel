@@ -28,9 +28,14 @@ typedef struct ProcessBlock{
 } ProcessBlock;
 
 //Prototipos
-    //ProcessBlock
+    
+//ProcessBlock
 ProcessBlock* criarProcessBlock(int id, char nome[64]);
-void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo, int id, char nome[64]);
+void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo);
 void ExcluirProcessBlock(ProcessBlock **inicio);
+    
+//Instruction
+Instruction* criarInstuction(char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero);
+void adicionarInstruction(Instruction **inicio, char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero);
 
 #endif

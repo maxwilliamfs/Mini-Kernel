@@ -32,13 +32,17 @@ void menuPrincipal(){
 
     //Processamento
     if(strcmp(comando,"load") == 0){
+        argumento = strtok(NULL," ");
+        char caminhoCompleto[100];
+        sprintf(caminhoCompleto,"Programs/%s.txt",argumento);
+        novoProcesso(&listaProcessos,caminhoCompleto, argumento);
         
     } else if(strcmp(comando,"kill") == 0){
 
     } else if(strcmp(comando,"mem") == 0){
         printMemory();
     } else if(strcmp(comando,"ps") == 0){
-
+        listarProgramas(listaProcessos);
     } else if(strcmp(comando,"help") == 0){
         printf("\n[KERNEL] Comandos validos:\n");
         printf("[KERNEL] <help> - Listar comandos\n");

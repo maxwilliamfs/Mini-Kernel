@@ -9,5 +9,7 @@ extern ProcessBlock *listaProcessos;
 extern int quantidadeProcessos;
 
 //Prototipos
-    
+void executarProgramas(ProcessBlock **inicio);
+void listarProgramas(ProcessBlock *inicio);
+
 #endif
