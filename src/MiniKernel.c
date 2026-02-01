@@ -6,6 +6,7 @@
 #include "Structures.h"
 #include "Loader.h"
 #include "Memory.h"
+#include "Process.h"
 
 //Prototipos
 void menuPrincipal();
@@ -21,12 +22,17 @@ int main(){
 
 //Funcoes
 void menuPrincipal(){
-    char comando[64],argumento[64];
-    printf("[KERNEL] Informe um Comando...\n");
-    scanf("%s", comando);
-    if(strcmp(comando,"load") == 0){
-        scanf("%s", argumento);
+    //Leitura do Comando
+    printf("[KERNEL] Informe um comando...\n");
+    char entrada[100];
+    char *comando,*argumento;
+    fgets(entrada,100,stdin);
+    entrada[strcspn(entrada,"\n")] = '\0';
+    comando = strtok(entrada," ");
 
+    //Processamento
+    if(strcmp(comando,"load") == 0){
+        
     } else if(strcmp(comando,"kill") == 0){
 
     } else if(strcmp(comando,"mem") == 0){

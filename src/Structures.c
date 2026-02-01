@@ -16,8 +16,7 @@ ProcessBlock* criarProcessBlock(int id, char nome[64]){
     novo->prox = NULL;
     return novo;
 }
-void AdicionarProcessBlock(ProcessBlock **inicio, int id, char nome[64]){
-    ProcessBlock *novo = criarProcessBlock(id,nome);
+void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo, int id, char nome[64]){
     if((*inicio) == NULL){
         (*inicio) = novo;
     } else {

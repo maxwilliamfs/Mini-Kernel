@@ -1,7 +1,10 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-//Prototipos
+//Bibliotecas
+#include "Structures.h"
 
+//Prototipos
+void novoProcesso(ProcessBlock **inicio,char nomeArquivo[64]);
 
 #endif

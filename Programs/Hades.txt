@@ -1,3 +1,1 @@
 malloc 10
-print rodando Hades
-exit

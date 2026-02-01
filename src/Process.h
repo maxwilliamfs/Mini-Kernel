@@ -6,6 +6,7 @@
 
 //Variaveis
 extern ProcessBlock *listaProcessos; 
+extern int quantidadeProcessos;
 
 //Prototipos
     

@@ -4,5 +4,6 @@
 
 //Variaveis
 ProcessBlock *listaProcessos = NULL;
+extern int quantidadeProcessos = 0;
 
 //Funcoes
