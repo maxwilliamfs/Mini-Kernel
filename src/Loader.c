@@ -33,7 +33,7 @@ void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]){
                 argumentoNumerico = atoi(argumento);
                 tipoargumento = NUMERICO;
             } else if(strcmp(comando,"print") == 0){
-                argumento = strtok(NULL," ");
+                argumento = strtok(NULL,"\0");
                 strcpy(argumentotexto,argumento);
                 tipoargumento = TEXTUAL;
             } else if(strcmp(comando,"wait") == 0){
@@ -49,7 +49,8 @@ void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]){
             //Colocar na lista de Instrucoes
             adicionarInstruction(&(novo->inicio),comando,tipoargumento,argumentotexto,argumentoNumerico);
         }
-        AdicionarProcessBlock(&listaProcessos,novo);
+        novo->atual = novo->inicio;
+        AdicionarProcessBlock(&LISTAPROCESSOS,novo);
         printf("[LOADER] %s lido com sucesso!\n\n", nome);
     }
 }

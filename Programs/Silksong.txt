@@ -1,5 +1,5 @@
 malloc 20;
 print Eu sou a silksong!!!!!
 wait 3
-print Fechando silksong...
+print Guarana!!!!
 exit

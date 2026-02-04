@@ -1,16 +1,57 @@
 //Bibliotecas
 #include "Structures.h"
 #include <stdio.h>
+#include <string.h>
+#include "Process.h"
 
 //Variaveis
 ProcessBlock *listaProcessos = NULL;
-extern int quantidadeProcessos = 0;
+int quantidadeProcessos = 0;
 
 //Funcoes
-void executarProgramas(ProcessBlock **inicio){
-
+void stepPrograms(ProcessBlock *inicio, int linhas){
+    printf("\n[PROCESS] Rodando %d linhas de %s\n\n", linhas, inicio->nome);
+    for(int i = 0; i < linhas; i++){
+        if(strcmp(inicio->atual->comando,"malloc") == 0){
+            printf("ainda nao sei oq fzr\n");
+        } else if (strcmp(inicio->atual->comando,"wait") == 0){
+            printf("ainda nao sei oq fzr\n");
+        } else if (strcmp(inicio->atual->comando,"print") == 0){
+            printf("%s\n", inicio->atual->argumentotextual);
+        } else if (strcmp(inicio->atual->comando,"exit") == 0){
+            printf("Fechando %s...\n", inicio->nome);
+            printf("\n[PROCESS] Fim do Programa %s\n", inicio->nome);
+            ExcluirProcessBlock(&LISTAPROCESSOS);
+            inicio->PC++;
+            break;
+        } 
+        inicio->atual = inicio->atual->prox;
+        inicio->PC++;
+    }
+    printf("\n[PROCESS] Fim do Comando (step)\n\n");
 }
-void listarProgramas(ProcessBlock *inicio){
+void executePrograms(ProcessBlock *inicio){
+    printf("\n[PROCESS] Rodando %s\n\n", inicio->nome);
+    while(1){
+        if(strcmp(inicio->atual->comando,"malloc") == 0){
+            printf("ainda nao sei oq fzr\n");
+        } else if (strcmp(inicio->atual->comando,"wait") == 0){
+            printf("ainda nao sei oq fzr\n");
+        } else if (strcmp(inicio->atual->comando,"print") == 0){
+            printf("%s\n", inicio->atual->argumentotextual);
+        } else if (strcmp(inicio->atual->comando,"exit") == 0){
+            printf("Fechando %s...\n", inicio->nome);
+            printf("\n[PROCESS] Fim do Programa %s\n", inicio->nome);
+            ExcluirProcessBlock(&LISTAPROCESSOS);
+            inicio->PC++;
+            break;
+        } 
+        inicio->atual = inicio->atual->prox;
+        inicio->PC++;
+    }
+    printf("\n[PROCESS] Fim do Comando (step)\n\n");
+}
+void PSPrograms(ProcessBlock *inicio){
     ProcessBlock *atual = inicio;
     while (atual != NULL) {
         printf("\n| Processo: %s |", atual->nome);

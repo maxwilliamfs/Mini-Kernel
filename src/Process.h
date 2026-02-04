@@ -4,12 +4,16 @@
 //Bibliotecas
 #include "Structures.h"
 
+//Pre Processamento
+#define LISTAPROCESSOS listaProcessos
+
 //Variaveis
 extern ProcessBlock *listaProcessos; 
 extern int quantidadeProcessos;
 
 //Prototipos
-void executarProgramas(ProcessBlock **inicio);
-void listarProgramas(ProcessBlock *inicio);
+void stepPrograms(ProcessBlock *inicio, int linhas);
+void PSPrograms(ProcessBlock *inicio);
+void executePrograms(ProcessBlock *inicio);
 
 #endif
