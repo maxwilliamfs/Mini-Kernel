@@ -1,8 +1,10 @@
-#include "memory.h"
+#include "Memory.h"
+#include <stdbool.h>
 #include <stdio.h>
 
+
 //variaveis
-int memory[64] = {0};
+int memory[MEM] = {0};
 
 //funcoes
 void printMemory(){
@@ -15,4 +17,25 @@ void printMemory(){
         printf("\n");
     }
     printf("\n");
+}
+bool memoryRequest(int quantidade, int id){
+    for(int i = 0; i<MEM; i++){
+        bool flag = false;
+        if(memory[i] == 0){
+            flag = true;
+            for(int j = i; (j-i) < quantidade;j++){
+                if(memory[j] != 0){
+                    flag = false;
+                }
+            }
+        }
+        if(flag){
+            int inicio = i;
+            for(int k = inicio; (k-inicio) < quantidade; k++){
+                memory[k] = id;
+            }
+            return true;
+        }
+    }
+    return false;
 }
