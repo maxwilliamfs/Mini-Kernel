@@ -6,14 +6,15 @@
 
 //Pre Processamento
 #define LISTAPROCESSOS listaProcessos
+#define LISTABLOQUEADOS listaProcessosBloqueados
 
 //Variaveis
 extern ProcessBlock *listaProcessos; 
 extern int quantidadeProcessos;
 
 //Prototipos
-void stepPrograms(ProcessBlock *inicio, int linhas);
+void stepPrograms(ProcessBlock *inicio, int id, int linhas);
 void PSPrograms(ProcessBlock *inicio);
-void executePrograms(ProcessBlock *inicio);
+void executePrograms(ProcessBlock *inicio, int id);
 
 #endif

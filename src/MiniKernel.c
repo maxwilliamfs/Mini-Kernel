@@ -26,7 +26,7 @@ void menuPrincipal(){
     printf("[KERNEL] Informe um comando...\n");
     char entrada[100];
     char *comando,*argumento;
-    int argumentoNumerico;
+    int argumentoNumerico, argumentoNumerico2;
     fgets(entrada,100,stdin);
     entrada[strcspn(entrada,"\n")] = '\0';
     comando = strtok(entrada," ");
@@ -51,19 +51,23 @@ void menuPrincipal(){
         printf("[KERNEL] <kill x> Finalizar programa\n");
         printf("[KERNEL] <clear> Limpa o terminar KERNEL\n");
         printf("[KERNEL] <ps> - Listar programas ja carregados\n");
-        printf("[KERNEL] <step x> -  Executa x linhas do primeiro programa da fila\n");
-        printf("[KERNEL] <execute> - Executa todas as linhas do primeiro programa da fila\n");
+        printf("[KERNEL] <step x y> -  Executa x linha do programa de ID y\n");
+        printf("[KERNEL] <execute x> - Executa todas as linhas do programa de ID x\n");
         printf("[KERNEL] <mem> - Ver o uso de memorio do sistema\n");
         printf("[KERNEL] <creat programa> - Cria um novo programa\n");
         printf("[KERNEL] <read programa> - Le o codigo de um programa\n");
         printf("[KERNEL] <edit programa> - Abre a aba de edicao de codigo de um programa\n");
         printf("[KERNEL] <exit> - Fecha o sistema\n\n");
     } else if(strcmp(comando,"execute") == 0){
-        executePrograms(LISTAPROCESSOS);
+        argumento = strtok(NULL," ");
+        argumentoNumerico = atoi(argumento);
+        executePrograms(LISTAPROCESSOS,argumentoNumerico);
     } else if(strcmp(comando,"step") == 0){
         argumento = strtok(NULL," ");
         argumentoNumerico = atoi(argumento);
-        stepPrograms(LISTAPROCESSOS,argumentoNumerico);
+        argumento = strtok(NULL," ");
+        argumentoNumerico2 = atoi(argumento);
+        stepPrograms(LISTAPROCESSOS,argumentoNumerico,argumentoNumerico2);
     } else if(strcmp(comando,"creat") == 0){
 
     } else if(strcmp(comando,"read") == 0){

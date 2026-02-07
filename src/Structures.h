@@ -32,7 +32,7 @@ typedef struct ProcessBlock{
 //ProcessBlock
 ProcessBlock* criarProcessBlock(int id, char nome[64]);
 void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo);
-void ExcluirProcessBlock(ProcessBlock **inicio);
+void ExcluirProcessBlock(ProcessBlock **inicio, int id);
     
 //Instruction
 Instruction* criarInstuction(char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero);

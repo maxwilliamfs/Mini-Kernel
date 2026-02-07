@@ -28,11 +28,21 @@ void AdicionarProcessBlock(ProcessBlock **inicio,ProcessBlock *novo){
         atual->prox = novo;
     }
 }
-void ExcluirProcessBlock(ProcessBlock **inicio){
-    ProcessBlock *excluir = (*inicio);
-    (*inicio) = (*inicio)->prox;
-    free(excluir);
+void ExcluirProcessBlock(ProcessBlock **inicio, int id){
+    ProcessBlock *atual = (*inicio);
+    if((*inicio)->PID == id){
+        (*inicio) = (*inicio)->prox;
+        free(atual);
+    } else {
+        while (atual->prox->PID != id) {
+            atual = atual->prox;
+        }
+        ProcessBlock *excluir = atual->prox;
+        atual->prox = excluir->prox;
+        free(excluir);
+    }
 }
+
     //Instruction
 Instruction* criarInstuction(char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero){
     Instruction *novo = malloc(sizeof(Instruction));
