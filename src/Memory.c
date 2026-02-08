@@ -1,3 +1,4 @@
+#include "Structures.h"
 #include "Memory.h"
 #include <stdbool.h>
 #include <stdio.h>
@@ -7,6 +8,13 @@
 int memory[MEM] = {0};
 
 //funcoes
+void cleanMemory(ProcessBlock *atual){
+    for(int i = 0; i < MEM; i++){
+        if(memory[i] == atual->PID){
+            memory[i] = 0;
+        }
+    }
+}
 void printMemory(){
     int k = 0;
     printf("\n[MEMORY] Gerenciamento de memoria:\n\n");
@@ -24,6 +32,9 @@ bool memoryRequest(int quantidade, int id){
         if(memory[i] == 0){
             flag = true;
             for(int j = i; (j-i) < quantidade;j++){
+                if(i + quantidade > MEM){
+                    return false;
+                }
                 if(memory[j] != 0){
                     flag = false;
                 }

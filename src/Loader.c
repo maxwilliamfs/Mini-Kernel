@@ -9,11 +9,11 @@
 //funcoes
 void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]){
     ProcessBlock *novo = criarProcessBlock(quantidadeProcessos + 1,nome);
-    quantidadeProcessos++;
     FILE *arqPrograma = fopen(nomeArquivo,"r");
     if(arqPrograma == NULL){
         printf("\nPrograma nao Existente!!!!!\n\n");
     } else {
+        quantidadeProcessos++;
         char linha[100], argumentotexto[100], *argumento;
         int argumentoNumerico;
         Tipo tipoargumento;

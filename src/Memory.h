@@ -11,6 +11,7 @@
 extern int memory[MEM];
 
 //Prototipos
+void cleanMemory(ProcessBlock *atual);
 void printMemory();
 bool memoryRequest(int quantidade, int id);
 #endif

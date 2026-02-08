@@ -39,7 +39,9 @@ void menuPrincipal(){
         novoProcesso(&LISTAPROCESSOS,caminhoCompleto, argumento);
         
     } else if(strcmp(comando,"kill") == 0){
-
+        argumento = strtok(NULL," ");
+        argumentoNumerico = atoi(argumento);
+        killProgram(argumentoNumerico);
     } else if(strcmp(comando,"mem") == 0){
         printMemory();
     } else if(strcmp(comando,"ps") == 0){
@@ -51,7 +53,7 @@ void menuPrincipal(){
         printf("[KERNEL] <kill x> Finalizar programa\n");
         printf("[KERNEL] <clear> Limpa o terminar KERNEL\n");
         printf("[KERNEL] <ps> - Listar programas ja carregados\n");
-        printf("[KERNEL] <step x y> -  Executa x linha do programa de ID y\n");
+        printf("[KERNEL] <step x y> -  Executa y linha do programa de ID x\n");
         printf("[KERNEL] <execute x> - Executa todas as linhas do programa de ID x\n");
         printf("[KERNEL] <mem> - Ver o uso de memorio do sistema\n");
         printf("[KERNEL] <creat programa> - Cria um novo programa\n");
