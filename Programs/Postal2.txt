@@ -1,0 +1,5 @@
+print Ola, eu sou o Postal2
+print eu mesmo
+malloc 5
+print HAHAHAHAHAH
+exit

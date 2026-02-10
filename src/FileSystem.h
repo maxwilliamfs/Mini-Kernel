@@ -4,10 +4,11 @@
 //Bibliotecas
 
 //Prototipos
-void creatFile(char nome[64]);
-void editFile(char nome[64]);
-void writeFile(char nome[64]);
-void readFile(char nome[64]);
+void creatFile(char nome[]);
+void editFile(char nome[]);
+void writeFile(char nome[], char argumento[]);
+void deleteLine(char nome[]);
+void readFile(char nome[]);
 void clear();
 
 #endif

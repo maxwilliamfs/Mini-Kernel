@@ -11,7 +11,7 @@ void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]){
     ProcessBlock *novo = criarProcessBlock(quantidadeProcessos + 1,nome);
     FILE *arqPrograma = fopen(nomeArquivo,"r");
     if(arqPrograma == NULL){
-        printf("\nPrograma nao Existente!!!!!\n\n");
+        printf("\n[PROCESS] Programa nao Existente!!!!!\n\n");
     } else {
         quantidadeProcessos++;
         char linha[100], argumentotexto[100], *argumento;
@@ -43,7 +43,7 @@ void novoProcesso(ProcessBlock **inicio,char nomeArquivo[], char nome[]){
             } else if(strcmp(comando,"exit") == 0){
                 tipoargumento = NENHUM;
             } else {
-                strcpy(comando,"Erro\n");
+                strcpy(comando,"[PROCESS] Erro\n");
             }
 
             //Colocar na lista de Instrucoes
