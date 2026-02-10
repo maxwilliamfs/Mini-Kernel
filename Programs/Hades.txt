@@ -1,5 +1,0 @@
-malloc 5
-print Eu sou zagreus
-print Odeio voce Hades
-wait 5
-exit

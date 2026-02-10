@@ -32,12 +32,24 @@ void ExcluirProcessBlock(ProcessBlock **inicio, int id){
     ProcessBlock *atual = (*inicio);
     if((*inicio)->PID == id){
         (*inicio) = (*inicio)->prox;
+        Instruction *inst = atual->inicio;
+        while (inst != NULL) {
+            Instruction *temp = inst;
+            inst = inst->prox;
+            free(temp);
+        }
         free(atual);
     } else {
         while (atual->prox->PID != id) {
             atual = atual->prox;
         }
         ProcessBlock *excluir = atual->prox;
+        Instruction *inst = excluir->inicio;
+        while (inst != NULL) {
+            Instruction *temp = inst;
+            inst = inst->prox;
+            free(temp);
+        }
         atual->prox = excluir->prox;
         free(excluir);
     }
@@ -54,6 +66,7 @@ Instruction* criarInstuction(char comando[], Tipo tipo, char argumentoTexto[], i
         novo->argumentonumerico = argumentoNumero;
     }
     novo->prox = NULL;
+    return novo;
 }
 void adicionarInstruction(Instruction **inicio, char comando[], Tipo tipo, char argumentoTexto[], int argumentoNumero){
     Instruction *novo = criarInstuction(comando,tipo,argumentoTexto,argumentoNumero);

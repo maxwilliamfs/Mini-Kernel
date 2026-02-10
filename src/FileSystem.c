@@ -31,10 +31,13 @@ void editFile(char nome[]){
         fgets(entrada,1024,stdin);
         entrada[strcspn(entrada,"\n")] = '\0';
         comando = strtok(entrada, " ");
-
         if(strcmp(comando,"write") == 0){
             argumento = strtok(NULL,"");
-            writeFile(nome, argumento);
+            if(argumento == NULL){
+                printf("[EDITOR] ERRO: Informe algo no comando write!!");
+            } else {
+                writeFile(nome,argumento);
+            }
         } else if(strcmp(comando,"delete") == 0){
             deleteLine(nome);
         } else if(strcmp(comando,"exit") == 0){
@@ -45,7 +48,7 @@ void editFile(char nome[]){
             printf("\n[EDITOR] Comandos de edicao:\n");
             printf("[EDITOR] <help> Informa os comandos validos");
             printf("[EDITOR] <write x> Escreve x no arquivo\n");
-            printf("[EDITOR] <delete x> Apaga x linhas do arquivo\n");
+            printf("[EDITOR] <delete> Apaga a ultima linha do arquivo\n");
             printf("[EDITOR] <exit> Sai do modo edicao\n");
             printf("---------------------------------------------------------\n");
             printf("[EDITOR] Comandos para os programas:\n");

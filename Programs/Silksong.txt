@@ -1,5 +1,0 @@
-malloc 10
-print Eu sou a silksong!!!!!
-wait 3
-print Guarana!!!!
-exit

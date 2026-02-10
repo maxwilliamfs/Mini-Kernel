@@ -1,3 +1,0 @@
-malloc 5
-print Essa eh a historia da sua morte...
-exit
