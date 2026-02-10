@@ -7,6 +7,7 @@
 #include "Loader.h"
 #include "Memory.h"
 #include "Process.h"
+#include "FileSystem.h"
 
 //Prototipos
 void menuPrincipal();
@@ -71,11 +72,17 @@ void menuPrincipal(){
         argumentoNumerico2 = atoi(argumento);
         stepPrograms(LISTAPROCESSOS,argumentoNumerico,argumentoNumerico2);
     } else if(strcmp(comando,"creat") == 0){
-
+        argumento = strtok(NULL," ");
+        char caminhocompleto[64];
+        sprintf(caminhocompleto,"Programs/%s.txt", argumento);
+        creatFile(caminhocompleto);
     } else if(strcmp(comando,"read") == 0){
 
     } else if(strcmp(comando,"edit") == 0){
-
+        argumento = strtok(NULL," ");
+        char caminhocompleto[64];
+        sprintf(caminhocompleto,"Programs/%s.txt", argumento);
+        editFile(caminhocompleto);
     } else if(strcmp(comando,"exit") == 0){
         printf("[KERNEL] Fechando...");
         exit(0);
