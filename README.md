@@ -1,4 +1,6 @@
 # Mini-Kernel Simulador
+
+## Descrição
 Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em demonstrar conceitos fundamentais de Sistemas Operacionais, como gerenciamento de memória, escalonamento de processos e tratamento de estados de execução.
 
 ## Funcionalidades
@@ -12,3 +14,6 @@ Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em de
 - Ambiente de Desenvolvimento: Linux Mint.
 - Compilador: GCC.
 - Versionamento: Git & GitHub.
+
+## Author
+**Max William Falcão Santos** - [@maxwilliamfs](https://github.com/maxwilliamfs)
