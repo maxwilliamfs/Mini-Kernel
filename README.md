@@ -11,7 +11,7 @@ Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em de
 - Editor de Texto Simulado (Create, Edit, Write, Delete).
 
 *Tecnologias e Ferramentas*
-Linguagem: C (Padrão C11).
-Ambiente de Desenvolvimento: Linux Mint.
-Compilador: GCC.
-Versionamento: Git & GitHub.
+- Linguagem: C (Padrão C11).
+- Ambiente de Desenvolvimento: Linux Mint.
+- Compilador: GCC.
+- Versionamento: Git & GitHub.
