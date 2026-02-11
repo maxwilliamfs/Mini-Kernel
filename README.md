@@ -1,7 +1,4 @@
 # Mini-Kernel Simulador
-Um simulador de Kernel de Sistema Operacional desenvolvido em C, capaz de carregar programas, gerenciar memória, escalonar processos e simular um sistema de arquivos básico.
-
-## Descrição
 Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em demonstrar conceitos fundamentais de Sistemas Operacionais, como gerenciamento de memória, escalonamento de processos e tratamento de estados de execução.
 
 ## Funcionalidades
