@@ -19,13 +19,18 @@ Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em de
 
 ## Execução
 ### Execultando pelo terminal
-- Clonar o repositório e acessar a pasta:  
+- Clonar o repositório e acessar a pasta:
+```bash
 git clone [https://github.com/maxwilliamfs/Mini-Kernel.git](https://github.com/maxwilliamfs/Mini-Kernel.git)  
 cd Mini-Kernel
-- Compilar o projeto:  
+```
+- Compilar o projeto:
+```bash
 make
+```
 - Execultar o projeto:  
+```bash
 ./mini_kernel
-
+```
 ## Autor
 **Max William Falcão Santos** - [@maxwilliamfs](https://github.com/maxwilliamfs)
