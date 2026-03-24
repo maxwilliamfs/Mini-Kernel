@@ -1,0 +1,15 @@
+*.o
+*.ko
+*.obj
+*.elf
+*.exe
+*.out
+*.app
+MiniKernel
+core
+*.core
+vgcore.*
+.DS_Store
+Thumbs.db
+*~
+.vscode/
