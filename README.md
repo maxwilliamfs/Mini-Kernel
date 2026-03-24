@@ -15,5 +15,5 @@ Este projeto é um simulador de núcleo (Kernel) desenvolvido em C, focado em de
 - Compilador: GCC.
 - Versionamento: Git & GitHub.
 
-## Author
+## Autor
 **Max William Falcão Santos** - [@maxwilliamfs](https://github.com/maxwilliamfs)
